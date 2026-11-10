@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+
+    <style>
+        body{
+            background: #FFF0F5;
+        }
+        h1{
+            color: #ffffff;
+        }
+        #nume, #somar, #tabuada{
+            width: 80px;
+            background: #F19CBB;
+            border-radius: 15px;
+        }
+        #texto{
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            background: #FBAED2;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto">
+        <h1>Tabuadas</h1>
+
+        <input type="number" name="nume" id="nume">=
+        <input type="button" name="tabuada" id="tabuada">
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        let tabuada = document.querySelector("#tabuada");
+        tabuada.addEventListener("click", calculo);
+
+        function calculo(){
+        let resultado = document.querySelector("#resultado");
+        let nume = document.querySelector("#nume");
+        let n = Number(nume.value);
+        
+            for (let tabu = 1; tabu <= 10; tabu++){
+                resultado.innerHTML += `${n} X ${tabu} = ${n * tabu}<br>`; 
+            }
+        }
+    </script>
+
+</body>
+</html>
